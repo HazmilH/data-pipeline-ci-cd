@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Data Pipeline CI/CD
 
 A complete data engineering pipeline with CI/CD implementation for learning purposes.
@@ -14,26 +13,26 @@ A complete data engineering pipeline with CI/CD implementation for learning purp
 
 ## 📁 Project Structure
   
-data-pipeline-ci-cd/
-├── src/
-│ └── data_pipeline/
-│ ├── init.py
-│ ├── pipeline.py # Main ETL pipeline
-│ └── cli.py # Command line interface
-├── tests/
-│ ├── unit/
-│ │ └── test_pipeline.py # Unit tests
-│ └── integration/ # Integration tests
-├── scripts/
-│ ├── generate_sample_data.py
-│ └── run_pipeline.py
-├── data/
-│ ├── raw/ # Input data
-│ └── processed/ # Output data
-├── .github/workflows/
-│ └── ci.yml # CI/CD pipeline
-├── docker/
-│ └── Dockerfile
-├── pyproject.toml
-├── requirements.txt
-└── README.md
+data-pipeline-ci-cd/  
+├── src/  
+│ └── data_pipeline/  
+│ ├── init.py  
+│ ├── pipeline.py # Main ETL pipeline  
+│ └── cli.py # Command line interface  
+├── tests/  
+│ ├── unit/  
+│ │ └── test_pipeline.py # Unit tests  
+│ └── integration/ # Integration tests  
+├── scripts/  
+│ ├── generate_sample_data.py  
+│ └── run_pipeline.py  
+├── data/  
+│ ├── raw/ # Input data  
+│ └── processed/ # Output data  
+├── .github/workflows/  
+│ └── ci.yml # CI/CD pipeline  
+├── docker/  
+│ └── Dockerfile  
+├── pyproject.toml  
+├── requirements.txt  
+└── README.md  

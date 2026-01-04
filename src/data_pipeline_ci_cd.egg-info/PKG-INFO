@@ -4,6 +4,7 @@ Version: 0.1.0
 Summary: Data Engineering Pipeline CI/CD
 Requires-Python: >=3.11
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: pandas==2.2.0
 Requires-Dist: numpy==1.26.4
 Requires-Dist: sqlalchemy==2.0.28
@@ -20,3 +21,44 @@ Provides-Extra: test
 Requires-Dist: pytest==8.0.0; extra == "test"
 Requires-Dist: pytest-cov==4.1.0; extra == "test"
 Requires-Dist: faker==23.2.1; extra == "test"
+Dynamic: license-file
+
+cat > README.md << 'EOF'
+# Data Pipeline CI/CD
+
+A complete data engineering pipeline with CI/CD implementation for learning purposes.
+
+## 🚀 Features
+
+- **ETL Pipeline**: Extract, Transform, Load data from CSV to database
+- **Unit & Integration Tests**: Comprehensive test suite
+- **CI/CD Pipeline**: GitHub Actions for automated testing
+- **Docker Support**: Containerized deployment
+- **Sample Data Generator**: Script to create test data
+- **CLI Interface**: Easy command-line interface
+
+## 📁 Project Structure
+  
+data-pipeline-ci-cd/
+├── src/
+│ └── data_pipeline/
+│ ├── init.py
+│ ├── pipeline.py # Main ETL pipeline
+│ └── cli.py # Command line interface
+├── tests/
+│ ├── unit/
+│ │ └── test_pipeline.py # Unit tests
+│ └── integration/ # Integration tests
+├── scripts/
+│ ├── generate_sample_data.py
+│ └── run_pipeline.py
+├── data/
+│ ├── raw/ # Input data
+│ └── processed/ # Output data
+├── .github/workflows/
+│ └── ci.yml # CI/CD pipeline
+├── docker/
+│ └── Dockerfile
+├── pyproject.toml
+├── requirements.txt
+└── README.md

@@ -1,6 +1,7 @@
 """
 Unit tests for DataPipeline
 """
+
 import pytest
 import pandas as pd
 from data_pipeline import DataPipeline

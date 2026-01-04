@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    environment:
+      - DATABASE_URL=sqlite:///data/pipeline.db
+    command: run --input data/raw/sample_data.csv --output processed_data
+  
+  test:
+    build: .
+    command: test
+    
+  generator:
+    build: .
+    command: >
+      sh -c "python scripts/generate_sample_data.py --rows 1000 && 
+             python -m data_pipeline.cli run --input data/raw/sample_data.csv"

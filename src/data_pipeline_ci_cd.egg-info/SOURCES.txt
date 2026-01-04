@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+src/data_pipeline/__init__.py
+src/data_pipeline/cli.py
+src/data_pipeline/pipeline.py
+src/data_pipeline_ci_cd.egg-info/PKG-INFO
+src/data_pipeline_ci_cd.egg-info/SOURCES.txt
+src/data_pipeline_ci_cd.egg-info/dependency_links.txt
+src/data_pipeline_ci_cd.egg-info/entry_points.txt
+src/data_pipeline_ci_cd.egg-info/requires.txt
+src/data_pipeline_ci_cd.egg-info/top_level.txt

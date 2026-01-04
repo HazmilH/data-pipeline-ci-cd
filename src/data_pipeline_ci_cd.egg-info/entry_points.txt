@@ -1,0 +1,3 @@
+[console_scripts]
+generate-data = scripts.generate_sample_data:main
+run-pipeline = data_pipeline.cli:main

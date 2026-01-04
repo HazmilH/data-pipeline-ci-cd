@@ -1,0 +1,55 @@
+[project]
+name = "data-pipeline-ci-cd"
+version = "0.1.0"
+description = "Data Engineering Pipeline CI/CD"
+readme = "README.md"
+requires-python = ">=3.11"
+
+dependencies = [
+    "pandas==2.2.0",
+    "numpy==1.26.4",
+    "sqlalchemy==2.0.28",
+    "python-dotenv==1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==8.0.0",
+    "pytest-cov==4.1.0",
+    "pytest-mock==3.12.0",
+    "black==24.1.1",
+    "ruff==0.2.1",
+    "mypy==1.8.0",
+    "pre-commit==3.6.0",
+]
+test = [
+    "pytest==8.0.0",
+    "pytest-cov==4.1.0",
+    "faker==23.2.1",
+]
+
+[project.scripts]
+run-pipeline = "data_pipeline.cli:main"
+generate-data = "scripts.generate_sample_data:main"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v"
+filterwarnings = [
+    "ignore:numpy.dtype size changed",
+    "ignore:numpy.ufunc size changed",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+select = ["E", "F", "W", "I", "B"]

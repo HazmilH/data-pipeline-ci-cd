@@ -11,21 +11,29 @@ jobs:
     
     - name: Install UV
       uses: astral-sh/setup-uv@v3
-      with:
-        enable-cache: true
     
-    - name: Install Python
+    - name: Set up Python
       run: uv python install 3.11
     
-    - name: Install package
-      run: uv pip install -e ".[dev]"
+    - name: Create virtual environment
+      run: uv venv
+    
+    - name: Activate and install
+      run: |
+        source .venv/bin/activate
+        uv pip install -e ".[dev]"
     
     - name: Check formatting
-      continue-on-error: false
-      run: uv run black --check src tests
+      run: |
+        source .venv/bin/activate
+        uv run black --check src tests
     
     - name: Run tests
-      run: uv run pytest tests/ -v
+      run: |
+        source .venv/bin/activate
+        uv run pytest tests/ -v
     
-    - name: Pipeline test
-      run: uv run python -m data_pipeline.cli test
+    - name: Test pipeline
+      run: |
+        source .venv/bin/activate
+        uv run python -m data_pipeline.cli test
